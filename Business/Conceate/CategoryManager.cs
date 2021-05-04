@@ -19,9 +19,14 @@ namespace Business.Conceate
             _categoryDal = categoryDal;
         }
 
+        public void CategoryAdd(Category category)
+        {
+            _categoryDal.Insert(category);
+        }
+
         public List<Category> GetList()
         {
-            throw new NotImplementedException();
+            return _categoryDal.List();
         }
     }
 }

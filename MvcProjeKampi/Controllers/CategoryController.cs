@@ -1,5 +1,8 @@
 ﻿using Business.Conceate;
+using Business.ValidationRules;
+using DataAccess.EntityFramework;
 using Entity.Concreate;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +13,7 @@ namespace MvcProjeKampi.Controllers
 {
     public class CategoryController : Controller
     {
-        CategoryManager cm = new CategoryManager();
+        CategoryManager cm = new CategoryManager(new EfCategoryDal());
         // GET: Category
         public ActionResult Index()
         {
@@ -18,8 +21,8 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult GetCategoryList()
         {
-          //  var categoryValues = cm.GetAll();
-            return View();
+            var categoryValues = cm.GetList();
+            return View(categoryValues);
         }
 
         [HttpGet]
@@ -31,8 +34,22 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
-           // cm.CategoryAdd(p);
-            return RedirectToAction("GetCategoryList");
+            CategoryValidator cv = new CategoryValidator();
+            ValidationResult results = cv.Validate(p);
+
+            if (results.IsValid)
+            {
+                cm.CategoryAdd(p);
+                return RedirectToAction("GetCategoryList");
+            }
+            else {
+
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+                return View();
+            }
         }
         
 
