@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mig_writeradd_status : DbMigration
+    public partial class mig_headingstatusadd : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Writers", "WiterStatus", c => c.Boolean(nullable: false));
+            AddColumn("dbo.Headings", "HeadingStatus", c => c.Boolean(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Writers", "WiterStatus");
+            DropColumn("dbo.Headings", "HeadingStatus");
         }
     }
 }

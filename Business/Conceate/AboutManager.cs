@@ -9,43 +9,38 @@ using System.Threading.Tasks;
 
 namespace Business.Conceate
 {
-    public class ContentManager : IContentService
+   public class AboutManager:IAboutService
     {
-        IContentDal _contentDal;
+        IAboutDal _aboutDal;
 
-        public ContentManager(IContentDal contentDal)
+        public AboutManager(IAboutDal aboutDal)
         {
-            _contentDal = contentDal;
+            _aboutDal = aboutDal;
         }
 
-        public void ContentAdd(Content content)
+        public void AboutAdd(About category)
         {
             throw new NotImplementedException();
         }
 
-        public void ContentDelete(Content content)
+        public void AboutDelete(About category)
         {
             throw new NotImplementedException();
         }
 
-        public void ContentUpdate(Content content)
+        public void AboutUpdate(About category)
         {
             throw new NotImplementedException();
         }
 
-        public Content GetById(int id)
+        public About GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Content> GetList()
+        public List<About> GetList()
         {
             throw new NotImplementedException();
-        }
-
-        public List<Content> GetListByHeadingID(int id)
-        {
-            return _contentDal.List(x => x.HeadingID == id);
         }
     }
 }
