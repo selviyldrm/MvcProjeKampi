@@ -10,10 +10,10 @@ namespace Business.Abstract
     public interface IAboutService
     {
         List<About> GetList();
-        void AboutAdd(About category);
+        void AboutAdd(About about);
         About GetById(int id);
-        void AboutDelete(About category);
-        void AboutUpdate(About category);
+        void AboutDelete(About about);
+        void AboutUpdate(About about);
 
     }
 }
