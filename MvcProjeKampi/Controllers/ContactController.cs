@@ -22,7 +22,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult GetContactDetails(int id)
         {
             var contactvalues = cm.GetById(id);
-            return View();
+            return View(contactvalues);
         }
         public PartialViewResult ContactPartial()
         {

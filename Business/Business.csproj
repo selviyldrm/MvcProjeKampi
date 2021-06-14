@@ -59,16 +59,21 @@
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
     <Compile Include="Abstract\IHeadingService.cs" />
+    <Compile Include="Abstract\IImageFileService.cs" />
+    <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Conceate\AboutManager.cs" />
     <Compile Include="Conceate\CategoryManager.cs" />
     <Compile Include="Conceate\ContactManager.cs" />
     <Compile Include="Conceate\ContentManager.cs" />
     <Compile Include="Conceate\HeadingManager.cs" />
+    <Compile Include="Conceate\ImageFileManager.cs" />
+    <Compile Include="Conceate\MessageManager.cs" />
     <Compile Include="Conceate\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
     <Compile Include="ValidationRules\ContactValidator.cs" />
+    <Compile Include="ValidationRules\MessageValidator.cs" />
     <Compile Include="ValidationRules\WriterValidator.cs" />
   </ItemGroup>
   <ItemGroup>
