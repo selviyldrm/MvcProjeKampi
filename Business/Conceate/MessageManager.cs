@@ -25,12 +25,12 @@ namespace Business.Conceate
 
         public List<Message> GetListInbox()
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.ReceiverMail == "eylül@gmail.com");
         }
         
         public List<Message> GetListSendBox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == "eylül@gmail.com");
 
         }
 

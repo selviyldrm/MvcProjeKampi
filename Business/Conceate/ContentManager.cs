@@ -47,5 +47,10 @@ namespace Business.Conceate
         {
             return _contentDal.List(x => x.HeadingID == id);
         }
+
+        public List<Content> GetListByWriter(int id )
+        {
+            return _contentDal.List(x => x.WriterID == id);
+        }
     }
 }
